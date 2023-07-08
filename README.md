@@ -18,9 +18,19 @@ Bu çalışmadaki veri seti 74,184 adet gerçek-sahte görüntüye sahip insan y
 
 Veri seti, eğitim, doğrulama ve test için ayrılmıştır. Eğitim için veri setinin %70'i kullanılmıştır, böylece modelin temel öğrenme süreci bu büyük veri alt kümesi üzerinde gerçekleştirilmiştir. Doğrulama için veri setinin %20'si ayrılmış ve modelin performansının izlenmesi ve hiperparametre ayarlaması için kullanılmıştır. Geriye kalan %10'luk veri seti ise test için ayrılmış ve modelin nihai performansını değerlendirmek amacıyla kullanılmıştır. Bu ayrım, modelin eğitim sürecinde aşırı uyma (overfitting) durumunu kontrol etmek ve genellemesini değerlendirmek için önemli bir adımdır.
 
-Tablo 1. Veri seti dağılımı
-Sahte-Gerçek	Eğitim Verileri	Doğrulama Verileri	Test Verileri
-Gerçek 	9,929	2,837	1,418
-Sahte 	42,000	12,000	6,000
-Toplam	51,929	14,837	7,418
+## 2.2. Kullanılan Dil Ve Araçlar
+Bu projede Python programlama dili kullanılmıştır. Python, geniş bir kütüphane ekosistemi ve kolay okunabilir syntax yapısıyla makine öğrenimi ve derin öğrenme gibi görevler için popüler bir tercihtir. 
+
+Proje geliştirme aşamasında Jupyter Notebook kullanılmıştır. Jupyter Notebook, interaktif bir kod çalışma ortamı sunarak kodu adım adım çalıştırma, sonuçları görselleştirme ve belgelendirme yapma imkanı sağlamaktadır. Bu özellikleri sayesinde modelin oluşturulması ve test edilmesi süreçlerinde kullanıcı dostu bir ortam sunmaktadır. 
+
+TensorFlow kütüphanesi, derin öğrenme modellerinin oluşturulması, eğitimi ve değerlendirilmesi için kullanılmıştır. TensorFlow, yüksek performanslı hesaplama yetenekleri ve geniş bir derin öğrenme araç seti sunarak modelin verimli bir şekilde geliştirilmesine ve eğitilmesine yardımcı olmuştur. Ayrıca TensorFlow-GPU, GPU hızlandırma özelliği sayesinde eğitim sürecinde daha yüksek performans elde etmemizi sağlamıştır. 
+
+Proje için ayrıca OpenCV, matplotlib ve diğer bazı kütüphaneler de kullanılmıştır. OpenCV, görüntü işleme işlevleri için kullanılan bir kütüphanedir ve görüntülerin işlenmesi, dönüşümleri ve ön işlemeleri için kullanılmıştır. Matplotlib, veri görselleştirme için kullanılan bir kütüphanedir ve modelin performansını analiz etmek ve sonuçları görselleştirmek için kullanılmıştır. Bu dil ve araçlar, projenin başarılı bir şekilde gerçekleştirilmesi için sağlam bir temel oluşturmuştur. Veri işleme, model oluşturma ve sonuç analizi gibi adımların etkin bir şekilde gerçekleştirilmesini sağlamıştır. 
+
+## 2.3. Görüntü Formatı
+Bu projede görüntü formatı olarak JPEG (Joint Photographic Experts Group) formatı kullanılmıştır. JPEG, sıkıştırma algoritmasıyla tanınan ve fotoğrafçılıkta yaygın olarak kullanılan bir format olarak bilinir. JPEG formatı, yüksek kalitede görüntülerin daha düşük dosya boyutlarıyla saklanmasına olanak tanırken, görsel detayları korumak için kayıplı sıkıştırma yöntemini kullanır. Bu sayede, veri setindeki görüntülerin işlenmesi ve modele beslenmesi için uygun bir format seçilmiştir.
+
+## Ön İşleme
+Veri ön işleme adımları kapsamında, 'fake_real' dizininde bulunan görüntüler kullanılmıştır. Projede kullanılan MobilenetV2 ve Densenet201, 224x224 piksel boyutunda görüntüler beklemektedir. Bu nedenle bu modellerin eğitim ve test sürecinde görüntüler 224x224 olarak ayarlanmıştır. Diğer yandan özgün olarak geliştirilen CNN modelinin eğitim ve test sürecinde görüntüler 256x256 olarak ayarlanmıştır. Bu şekilde, farklı modellerin gereksinimlerini karşılayacak şekilde görüntüler ön işlenmiş ve kullanıma hazır hale getirilmiştir. Bunun yanında veri seti piksel değerlerini [0, 255] aralığından [0, 1] aralığına ölçeklendirmek için data.map fonksiyonu kullanılarak ön işleme adımı gerçekleştirilmiştir. Bu adım, görüntülerin daha iyi öğrenme performansı sağlaması ve daha istikrarlı bir eğitim süreci geçirmesi için önemlidir. 
+
 
