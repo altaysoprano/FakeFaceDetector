@@ -69,11 +69,11 @@ Düzleştirme (Flatten) katmanı, evrişim katmanlarından elde edilen özellik 
 Model, 'adam' optimizer ile derlenir. 'adam' optimizer, adaptif momentum tahmini kullanarak ağırlıkları günceller. Kayıp fonksiyonu olarak Binary Crossentropy kullanılır, çünkü bu bir ikili sınıflandırma problemini çözmektedir. Doğruluk (accuracy) metriği, modelin sınıflandırma performansını ölçmek için kullanılır. 
 
 Algoritma 1. Özgün CNN modelinin kodları
-# Kütüphanelerin import edilmesi
+#### Kütüphanelerin import edilmesi
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Dropout
 
-# Modelin oluşturulması
+#### Modelin oluşturulması
 model = Sequential()
 from keras import regularizers
 model.add(Conv2D(16, (3,3), 1, activation='relu', input_shape=(256,256,3)))
@@ -88,7 +88,7 @@ model.add(Flatten())
 model.add(Dense(256, activation='relu'))
 model.add(Dense(1, activation='sigmoid'))
 
-# Modelin derlenmesi 
+#### Modelin derlenmesi 
 model.compile('adam', loss=tf.losses.BinaryCrossentropy(), metrics=['accuracy'])
 
 
