@@ -33,4 +33,32 @@ Bu projede görüntü formatı olarak JPEG (Joint Photographic Experts Group) fo
 ## Ön İşleme
 Veri ön işleme adımları kapsamında, 'fake_real' dizininde bulunan görüntüler kullanılmıştır. Projede kullanılan MobilenetV2 ve Densenet201, 224x224 piksel boyutunda görüntüler beklemektedir. Bu nedenle bu modellerin eğitim ve test sürecinde görüntüler 224x224 olarak ayarlanmıştır. Diğer yandan özgün olarak geliştirilen CNN modelinin eğitim ve test sürecinde görüntüler 256x256 olarak ayarlanmıştır. Bu şekilde, farklı modellerin gereksinimlerini karşılayacak şekilde görüntüler ön işlenmiş ve kullanıma hazır hale getirilmiştir. Bunun yanında veri seti piksel değerlerini [0, 255] aralığından [0, 1] aralığına ölçeklendirmek için data.map fonksiyonu kullanılarak ön işleme adımı gerçekleştirilmiştir. Bu adım, görüntülerin daha iyi öğrenme performansı sağlaması ve daha istikrarlı bir eğitim süreci geçirmesi için önemlidir. 
 
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/d6299c2b-cc51-4a75-b7f3-cd8d8dcd874b)
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/ddb74810-1462-418f-a637-2363946924d3)
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/ecd89a79-5e1a-487a-a1a9-6eba76960ebf)
+Şekil 2. Özgün CNN modeli için kullanılan görüntü örnekleri
+
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/63ea819e-c040-454c-b15d-cdad1825a299)
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/e51aea91-820a-453d-85d9-be972bc4036c)
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/04e27ee1-18ca-4178-9299-56cf68050e85)
+Şekil 3. MobilenetV2 için kullanılan görüntü örnekleri
+
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/3355752f-de5d-4364-94d8-56647d96b79a)
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/cfbbbbae-0e2d-44e2-bd84-05ac0af756a8)
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/555a6582-8792-4dbc-a908-10b537861fb4)
+Şekil 4. DenseNet201 için kullanılan görüntü örnekleri
+
+## 2.5. Model Ağı
+Daha önce de bahsettiğimiz gibi, proje için kullanılan ‘fake_real’ veri seti, oluşturduğumuz özgün bir CNN modeli ve ön-eğitimli 2 model (MobilenetV2 ve Densenet201) kullanılarak eğitilmiştir. 
+
+## 2.6. Modellerin Eğitimi ve Doğrulanması
+
+
+
+
+
+
+
+
+
 
