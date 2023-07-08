@@ -52,6 +52,83 @@ Veri ön işleme adımları kapsamında, 'fake_real' dizininde bulunan görünt�
 Daha önce de bahsettiğimiz gibi, proje için kullanılan ‘fake_real’ veri seti, oluşturduğumuz özgün bir CNN modeli ve ön-eğitimli 2 model (MobilenetV2 ve Densenet201) kullanılarak eğitilmiştir. 
 
 ## 2.6. Modellerin Eğitimi ve Doğrulanması
+## 2.6.1. Önerilen Model
+Önerilen özgün model, sahte yüzlerin tespiti için bir evrişimli sinir ağı (Convolutional Neural Network - CNN) kullanmaktadır. Bu model, görüntülerin boyutu, evrişim katmanları, dropout katmanları ve tam bağlantılı katmanlar gibi çeşitli bileşenlerden oluşmaktadır. 
+
+## 2.6.1.1. Giriş Katmanı
+Görüntülerin boyutu (256, 256, 3) olarak kabul edilir, yani 256 piksel genişlik, 256 piksel yükseklik ve 3 renk kanalı (RGB) bulunur. Bu katman, modele görüntülerin girişini sağlar. 
+## 2.6.1.2. Evrişim Katmanları
+İlk evrişim katmanı, 16 adet (3, 3) boyutunda filtre kullanır ve ReLU aktivasyon fonksiyonu ile aktive edilir. Ardından maksimum havuzlama (MaxPooling) katmanı gelir, boyutu varsayılan olarak belirlenir. İkinci evrişim katmanı, 32 adet (3, 3) boyutunda filtre kullanır ve yine ReLU aktivasyon fonksiyonu ile aktive edilir. 
+## 2.6.1.3. Dropout Katmanları
+İlk Dropout katmanı, %40 oranında nöronları rastgele atarak aşırı uyumu önlemek için kullanılır. İkinci Dropout katmanı da aynı şekilde %40 oranında nöronları rastgele atar. 
+## 2.6.1.4. Düzleştirme Katmanı
+Düzleştirme (Flatten) katmanı, evrişim katmanlarından elde edilen özellik haritalarını düz bir vektöre dönüştürür. Bu, tam bağlantılı (Dense) katmanlarda kullanılmak üzere verilerin düzenlenmesini sağlar. 
+## 2.6.1.5. Tam Bağlantılı Katmanlar
+İlk tam bağlantılı katman, 256 nöron içerir ve ReLU aktivasyon fonksiyonu ile aktive edilir. Son katman, ikili sınıflandırma yapılacağı için 1 nöron içerir ve sigmoid aktivasyon fonksiyonu kullanır. 
+## 2.6.1.6. Derleme
+Model, 'adam' optimizer ile derlenir. 'adam' optimizer, adaptif momentum tahmini kullanarak ağırlıkları günceller. Kayıp fonksiyonu olarak Binary Crossentropy kullanılır, çünkü bu bir ikili sınıflandırma problemini çözmektedir. Doğruluk (accuracy) metriği, modelin sınıflandırma performansını ölçmek için kullanılır. 
+
+Algoritma 1. Özgün CNN modelinin kodları
+# Kütüphanelerin import edilmesi
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Dropout
+
+# Modelin oluşturulması
+model = Sequential()
+from keras import regularizers
+model.add(Conv2D(16, (3,3), 1, activation='relu', input_shape=(256,256,3)))
+model.add(MaxPooling2D())
+model.add(Conv2D(32, (3,3), 1, activation='relu'))
+model.add(MaxPooling2D())
+model.add(Dropout(0.4))
+model.add(Conv2D(16, (3,3), 1, activation='relu'))
+model.add(MaxPooling2D())
+model.add(Dropout(0.4))
+model.add(Flatten())
+model.add(Dense(256, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
+# Modelin derlenmesi 
+model.compile('adam', loss=tf.losses.BinaryCrossentropy(), metrics=['accuracy'])
+
+
+
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 254, 254, 16)      448       
+                                                                 
+ max_pooling2d (MaxPooling2D  (None, 127, 127, 16)     0         
+ )                                                               
+                                                                 
+ conv2d_1 (Conv2D)           (None, 125, 125, 32)      4640      
+                                                                 
+ max_pooling2d_1 (MaxPooling  (None, 62, 62, 32)       0         
+ 2D)                                                             
+                                                                 
+ dropout (Dropout)           (None, 62, 62, 32)        0         
+                                                                 
+ conv2d_2 (Conv2D)           (None, 60, 60, 16)        4624      
+                                                                 
+ max_pooling2d_2 (MaxPooling  (None, 30, 30, 16)       0         
+ 2D)                                                             
+                                                                 
+ dropout_1 (Dropout)         (None, 30, 30, 16)        0         
+                                                                 
+ flatten (Flatten)           (None, 14400)             0         
+                                                                 
+ dense (Dense)               (None, 256)               3686656   
+                                                                 
+ dense_1 (Dense)             (None, 1)                 257       
+                                                                 
+=================================================================
+Total params: 3,696,625
+Trainable params: 3,696,625
+Non-trainable params: 0
+_________________________________________________________________
+
+Şekil 5. Özgün modelin özeti
+
+
 
 
 
