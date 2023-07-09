@@ -15,19 +15,8 @@ Bu çalışmada, sahte yüzlerin tespiti için üç farklı CNN modeli sunulmakt
 
 \- Densenet201 modeli için Şekil 9’da özeti verilen model kullanılmıştır. 
 
-![](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.002.png)![](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.002.png)![](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.003.png)![](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.004.png)
-
-**Giriş görüntüsünün alınması:** 
-
-Modelin girişine, gerçek veya sahte bir insan yüzü görüntüsü sağlanır
-![](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.005.png)
-
-
-
-
-**Şekil 1.** Projenin genel şeması
-
 Eğitim tamamlandıktan sonra, modeller test veri seti üzerinde değerlendirilmiştir. Elde edilen sonuçlar, her üç modelin de sahte yüzlerin tespiti konusunda yüksek performans sergilediğini göstermiştir. Modeller, gerçek yüzler ile sahte yüzler arasındaki farklılıkları belirlemek için farklı özelliklerin öğrenilmesini sağlamaktadır. Sonuç olarak, bu çalışmada sunulan MobileNetV2, DenseNet201 ve özgün CNN modeli, sahte yüzlerin tespiti konusunda yüksek doğruluk ve güvenilirlik sağlama potansiyeline sahiptir. Bu modeller, sahte yüzlerin otomatik olarak tespit edilmesiyle kişisel güvenliği artırabilir ve kötü niyetli faaliyetleri önleme konusunda önemli bir rol oynayabilir. Gelecekteki çalışmalar, farklı veri setleri üzerinde modellerin performansının daha da değerlendirilmesini ve yeni yöntemlerin keşfedilmesini içermelidir.
+
 # **1. Giriş**
 Dijital görüntü manipülasyonu teknolojilerinin hızla ilerlemesiyle birlikte, sahte yüzlerin oluşturulması ve kullanılması potansiyel riskleri artırmıştır. Bu riskler, kişisel verilerin kötüye kullanımı, itibar kaybı, dolandırıcılık ve diğer kötü niyetli eylemler gibi bir dizi sorunu beraberinde getirmektedir. Bu nedenle, sahte yüzlerin tespit edilmesi ve doğrulanması, bireylerin güvenliğini sağlamak ve yanıltıcı uygulamalara karşı korumak için büyük önem taşımaktadır. 
 
@@ -64,30 +53,33 @@ Bu projede görüntü formatı olarak JPEG (Joint Photographic Experts Group) fo
 ## **2.4. Ön İşleme**
 Veri ön işleme adımları kapsamında, 'fake\_real' dizininde bulunan görüntüler kullanılmıştır. Projede kullanılan MobilenetV2 ve Densenet201, 224x224 piksel boyutunda görüntüler beklemektedir. Bu nedenle bu modellerin eğitim ve test sürecinde görüntüler 224x224 olarak ayarlanmıştır. Diğer yandan özgün olarak geliştirilen CNN modelinin eğitim ve test sürecinde görüntüler 256x256 olarak ayarlanmıştır. Bu şekilde, farklı modellerin gereksinimlerini karşılayacak şekilde görüntüler ön işlenmiş ve kullanıma hazır hale getirilmiştir. Bunun yanında veri seti piksel değerlerini [0, 255] aralığından [0, 1] aralığına ölçeklendirmek için data.map fonksiyonu kullanılarak ön işleme adımı gerçekleştirilmiştir. Bu adım, görüntülerin daha iyi öğrenme performansı sağlaması ve daha istikrarlı bir eğitim süreci geçirmesi için önemlidir. 
 
-![C:\Users\user\Downloads\kkj.png](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.006.png)
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/dcf0262d-75c2-46ba-affe-fd50f03ca758)
 
-![C:\Users\user\Downloads\indir (2).png](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.007.png)
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/18376997-e225-4741-ad49-5fa1d1e4fe87)
 
-![C:\Users\user\Downloads\indir (3).png](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.008.png)
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/fc44004d-ad81-42f4-a868-2b16b1164e83)
 
 **Şekil 2.** Özgün CNN modeli için kullanılan görüntü örnekleri
 
-![C:\Users\user\Downloads\djk.png](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.009.png)
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/bbda1017-1424-46fe-b356-4cc2938f588a)
 
-![C:\Users\user\Downloads\indir (4).png](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.010.png) 
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/7b38f540-2b5b-47fe-b9ea-505fc5f2b677)
 
-![C:\Users\user\Downloads\indir (5).png](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.011.png)
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/5b147898-9942-42aa-a154-4bd1c4ca42a5)
 
 **Şekil 3.** MobilenetV2 için kullanılan görüntü örnekleri
 
-![C:\Users\user\Downloads\dkf.png](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.012.png)
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/48fe301b-9650-4553-91ad-2dc58fa7013d)
 
-![C:\Users\user\Downloads\indir (6).png](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.013.png) ![C:\Users\user\Downloads\indir (7).png](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.014.png)
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/e32d3ac1-44a5-413a-9621-8b64c7d0b0db)
+
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/20bd0968-a542-4b00-8691-c54551db8295)
 
 **Şekil 4.** DenseNet201 için kullanılan görüntü örnekleri
 
 ## **2.5. Model Ağı**
 Daha önce de bahsettiğimiz gibi, proje için kullanılan ‘fake\_real’ veri seti, oluşturduğumuz özgün bir CNN modeli ve ön-eğitimli 2 model (MobilenetV2 ve Densenet201) kullanılarak eğitilmiştir. 
+
 ## **2.6. Modellerin Eğitimi ve Doğrulanması**
 ### **2.6.1. Önerilen Model** 
 Önerilen özgün model, sahte yüzlerin tespiti için bir evrişimli sinir ağı (Convolutional Neural Network - CNN) kullanmaktadır. Bu model, görüntülerin boyutu, evrişim katmanları, dropout katmanları ve tam bağlantılı katmanlar gibi çeşitli bileşenlerden oluşmaktadır. 
@@ -213,7 +205,9 @@ Non-trainable params: 0
 
 
 
-|![C:\Users\user\fake_face_env\Scripts\epoch20 acc.png](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.016.png)|![C:\Users\user\fake_face_env\Scripts\epoch20-loss.png](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.017.png)|
+|![![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/e59c6e5f-51b5-49b0-b7e1-cf9c76364dcd)
+](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.016.png)|![![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/3cf3d3a3-83b9-4b85-8498-d175d852f358)
+](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.017.png)|
 | - | - |
 |<p></p><p>a) Modelin eğitim ve doğrulama doğruluk eğrileri</p><p></p>|<p></p><p>b) Modelin eğitim ve doğrulama kayıp eğrileri</p><p></p>|
 **Şekil 6.**  Özgün modelin eğitim ve doğruluk eğrileri 
