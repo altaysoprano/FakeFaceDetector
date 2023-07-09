@@ -1,37 +1,3 @@
-﻿**KARADENİZ TEKNİK ÜNİVERSİTESİ**
-
-**OF TEKNOLOJİ FAKÜLTESİ**
-
-![ktulogotr_01.jpg](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.001.jpeg)**YAZILIM MÜHENDİSLİĞİ BÖLÜMÜ**
-
-
-
-
-**	
-
-**Görüntülerden Sahte/Gerçek Yüz Ayrımının Yapılması** 
-
-**(Fake Face Detection)**
-
-
-
-**GÖRÜNTÜ İŞLEME VİZE PROJESİ**
-
-
-
-
-
-**369539 - Hasan Cihad Altay**
-
-
-
-
-
-
-**2022-2023 BAHAR DÖNEMİ**
-
-
-
 # **Özet**
 Bu çalışmada, sahte yüzlerin tespiti için üç farklı CNN modeli sunulmaktadır: MobileNetV2, DenseNet201 ve önerilen özgün CNN modeli. Bu modeller, sahte yüzlerin tespiti için yüksek doğruluk ve güvenilirlik sağlamak amacıyla tasarlanmıştır. Öncelikle, eğitim süreci için büyük çaplı bir veri seti toplanmış ve etiketlenmiştir. Bu veri seti, gerçek ve sahte yüz görüntülerini içeren geniş bir çeşitlilik sunmaktadır. Ardından, eğitim süreci için MobileNetV2 ve DenseNet201 gibi önceden eğitilmiş ağırlıklar kullanılmıştır. Bu modeller, transfer öğrenme yöntemleriyle geliştirilmiştir ve sahte yüzlerin tespiti için etkili bir performans sergilemektedir. Ayrıca, önerilen özgün CNN modeli de geliştirilmiştir. Bu model, sahte yüzlerin tespiti için özel olarak tasarlanmış ve optimize edilmiştir. Kendi CNN modelimiz, veri setindeki özellikleri daha iyi öğrenmek ve daha hassas bir tespit sağlamak amacıyla eğitim sürecinde kullanılmıştır. 
 
