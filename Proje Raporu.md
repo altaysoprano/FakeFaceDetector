@@ -316,6 +316,7 @@ Non-trainable params: 2,257,984
 
 ### **2.6.2.1. MobilenetV2 modelinin doğruluk ve kayıp eğrileri** 
 ![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/34483e78-c104-4724-9958-ad0ba96dbdcf)![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/23271450-a2cd-4c95-9a63-3e89928ceab9)
+
 **Şekil 8.**  MobilenetV2 modelinin eğitim ve doğruluk eğrileri 
 
 ### **2.6.2.2. MobilenetV2 modelinin sınıflandırma başarımları ve karmaşıklık matrisi**
