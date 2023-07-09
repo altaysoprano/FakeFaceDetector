@@ -207,8 +207,6 @@ Non-trainable params: 0
 
 ![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/e4b5c70b-54a3-40ad-84a4-dd5b8cc66b24)![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/127d094e-80bd-4578-b9ee-03039b56b301)
 
-| - | - |
-|<p></p><p>a) Modelin eğitim ve doğrulama doğruluk eğrileri</p><p></p>|<p></p><p>b) Modelin eğitim ve doğrulama kayıp eğrileri</p><p></p>|
 **Şekil 6.**  Özgün modelin eğitim ve doğruluk eğrileri 
 
 Şekil 6, eğitim ve doğrulama sırasında ağın öğrenme eğrilerini göstermektedir. Şekil 6.(a)’da gözlemlendiği üzere genel olarak doğrulama doğruluğu ve eğitim doğruluğu düzenli bir artış göstermiş ve %98.74 eğitim doğruluğu ve %93.22 doğrulama doğruluğuna ulaşmıştır. Şekil 6.(b)’de ise ağın eğitim kaybınınn düzenli olarak düştüğü görülmektedir. Doğrulama kaybında ise zaman zaman küçük artış eğilimleri olsa da genele baktığımız zaman büyük bir düşüş söz konusudur. 
@@ -317,10 +315,7 @@ Non-trainable params: 2,257,984
 **Şekil 7.** MobilenetV2 modelinin özeti
 
 ### **2.6.2.1. MobilenetV2 modelinin doğruluk ve kayıp eğrileri** 
-
-|![C:\Users\user\fake_face_env\Scripts\mobilenetv2 acc.png](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.019.png)|![C:\Users\user\fake_face_env\Scripts\mobilenetv2 loss.png](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.020.png)|
-| - | - |
-|<p></p><p>a) Modelin eğitim ve doğrulama doğruluk eğrileri</p><p></p>|<p></p><p>b) Modelin eğitim ve doğrulama kayıp eğrileri</p><p></p>|
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/34483e78-c104-4724-9958-ad0ba96dbdcf)![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/23271450-a2cd-4c95-9a63-3e89928ceab9)
 **Şekil 8.**  MobilenetV2 modelinin eğitim ve doğruluk eğrileri 
 
 ### **2.6.2.2. MobilenetV2 modelinin sınıflandırma başarımları ve karmaşıklık matrisi**
@@ -412,12 +407,10 @@ Non-trainable params: 18,321,984
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 **Şekil 9.** Densenet201 modelinin özeti
+
 ### **2.6.3.1. Densenet201 modelinin doğruluk ve kayıp eğrileri**
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/cbd3f784-4184-4255-a3a8-b77ecb1378a1)![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/91a4f2c3-3bcf-4fb5-8a9c-6788b2e561d3)
 
-
-|![C:\Users\user\fake_face_env\Scripts\densenet acc.png](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.022.png)|![C:\Users\user\fake_face_env\Scripts\densenet loss.png](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.023.png)|
-| - | - |
-|<p></p><p>a) Modelin eğitim ve doğrulama doğruluk eğrileri</p><p></p>|<p></p><p>b) Modelin eğitim ve doğrulama kayıp eğrileri</p><p></p>|
 **Şekil 10.**  Densenet201 modelinin eğitim ve doğruluk eğrileri 
 
 Şekil 10, eğitim ve doğrulama sırasında ağın öğrenme eğrilerini göstermektedir. Şekil 10.(a)’da gözlemlendiği üzere genel olarak doğrulama doğruluğu ve eğitim doğruluğu düzenli bir artış göstermiş ve %87.13 eğitim doğruluğu ve %86.73 doğrulama doğruluğuna ulaşmıştır. Şekil 10.(b)’de ise ağın eğitim ve doğrulama kaybının düzenli olarak düştüğü görülmektedir. 
