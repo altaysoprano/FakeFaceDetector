@@ -205,9 +205,8 @@ Non-trainable params: 0
 
 
 
-|![![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/e59c6e5f-51b5-49b0-b7e1-cf9c76364dcd)
-](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.016.png)|![![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/3cf3d3a3-83b9-4b85-8498-d175d852f358)
-](Aspose.Words.19ab31ff-0089-4e87-96a0-1f25b8ca7516.017.png)|
+![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/e4b5c70b-54a3-40ad-84a4-dd5b8cc66b24)![image](https://github.com/altaysoprano/FakeFaceDetector/assets/37440249/127d094e-80bd-4578-b9ee-03039b56b301)
+
 | - | - |
 |<p></p><p>a) Modelin eğitim ve doğrulama doğruluk eğrileri</p><p></p>|<p></p><p>b) Modelin eğitim ve doğrulama kayıp eğrileri</p><p></p>|
 **Şekil 6.**  Özgün modelin eğitim ve doğruluk eğrileri 
